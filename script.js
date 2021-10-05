@@ -41,3 +41,24 @@ docContent.innerHTML=`<i>${content}</i>`
 docImage.innerHTML=`<img src="${image}" >`
 
 }
+
+docImage.addEventListener("mouseover",()=>{
+    console.log("ok girdi")
+    document.querySelector(".image").style.cursor="zoom-in"
+}
+)
+
+let magnify=0
+docImage.addEventListener("click",(e)=>{
+    if (magnify==0){
+    document.querySelector(".image").style.transform="scale(3)"
+    document.querySelector(".image").style.cursor="zoom-out"
+    magnify=1
+    }else{
+        document.querySelector(".image").style.transform="scale(1)"
+        document.querySelector(".image").style.cursor="zoom-in" 
+        magnify=0 
+    }
+
+}
+)
